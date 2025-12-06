@@ -1,2 +1,5 @@
-import './style.css';
-console.log("Webpack is working!");
+import ScreenController from "./ScreenController";
+import './style.css'; 
+
+
+ScreenController.init();
