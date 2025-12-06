@@ -1,7 +1,7 @@
 export default class Project {
   constructor(name) {
     this.name = name;
-    this.todos = []; 
+    this.todos = [];
   }
 
   setTodos(todos) {
@@ -16,7 +16,7 @@ export default class Project {
     return this.todos.find((todo) => todo.id === todoId);
   }
 
-  addTodo(newTodo) { 
+  addTodo(newTodo) {
     if (!this.todos.find((todo) => todo.id === newTodo.id)) {
       this.todos.push(newTodo);
     }

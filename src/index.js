@@ -1,5 +1,4 @@
 import ScreenController from "./ScreenController";
-import './style.css'; 
-
+import "./style.css";
 
 ScreenController.init();

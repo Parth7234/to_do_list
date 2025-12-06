@@ -1,49 +1,40 @@
 import Project from "./Project";
 import Todo from "./Todo";
 
-const Storage = (function() {
-    
-    
-    const saveProjects = (projects) => {
-        localStorage.setItem("todoProjects", JSON.stringify(projects));
-    };
+const Storage = (function () {
+  const saveProjects = (projects) => {
+    localStorage.setItem("todoProjects", JSON.stringify(projects));
+  };
 
-    
-    const loadProjects = () => {
-        const data = localStorage.getItem("todoProjects");
-        
-        if (!data) return null; 
+  const loadProjects = () => {
+    const data = localStorage.getItem("todoProjects");
 
-        const rawProjects = JSON.parse(data);
+    if (!data) return null;
 
-        
-        
-        return rawProjects.map((rawProject) => {
-            
-            
-            const project = new Project(rawProject.name);
-            
-            
-            
-            const reconstructedTodos = rawProject.todos.map((rawTodo) => {
-                const todo = new Todo(
-                    rawTodo.title,
-                    rawTodo.description,
-                    rawTodo.dueDate,
-                    rawTodo.priority
-                );
-                
-                todo.id = rawTodo.id;
-                todo.completed = rawTodo.completed;
-                return todo;
-            });
+    const rawProjects = JSON.parse(data);
 
-            project.setTodos(reconstructedTodos);
-            return project;
-        });
-    };
+    return rawProjects.map((rawProject) => {
+      const project = new Project(rawProject.name);
 
-    return { saveProjects, loadProjects };
+      const reconstructedTodos = rawProject.todos.map((rawTodo) => {
+        const todo = new Todo(
+          rawTodo.title,
+          rawTodo.description,
+          rawTodo.dueDate,
+          rawTodo.priority
+        );
+
+        todo.id = rawTodo.id;
+        todo.completed = rawTodo.completed;
+        return todo;
+      });
+
+      project.setTodos(reconstructedTodos);
+      return project;
+    });
+  };
+
+  return { saveProjects, loadProjects };
 })();
 
 export default Storage;

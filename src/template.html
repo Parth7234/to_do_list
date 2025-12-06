@@ -1,51 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Todo List</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="content">
-        <div class="sidebar">
-            <h2>Projects</h2>
-            <div id="project-list"></div>
-            <button id="new-project-btn" class="add-btn">+ New Project</button>
-        </div>
+      <div class="sidebar">
+        <h2>Projects</h2>
+        <div id="project-list"></div>
+        <button id="new-project-btn" class="add-btn">+ New Project</button>
+      </div>
 
-        <div class="main">
-            <h2 id="project-title">Project Name</h2>
-            <div id="todo-list"></div>
-            <button id="new-todo-btn" class="add-btn">+ New Todo</button>
-        </div>
+      <div class="main">
+        <h2 id="project-title">Project Name</h2>
+        <div id="todo-list"></div>
+        <button id="new-todo-btn" class="add-btn">+ New Todo</button>
+      </div>
     </div>
 
     <dialog id="project-dialog">
-        <form id="project-form">
-            <h3>Add Project</h3>
-            <input type="text" id="project-name" placeholder="Project Name" required>
-            <div class="form-actions">
-                <button type="button" id="close-project-dialog">Cancel</button>
-                <button type="submit">Add</button>
-            </div>
-        </form>
+      <form id="project-form">
+        <h3>Add Project</h3>
+        <input
+          type="text"
+          id="project-name"
+          placeholder="Project Name"
+          required
+        />
+        <div class="form-actions">
+          <button type="button" id="close-project-dialog">Cancel</button>
+          <button type="submit">Add</button>
+        </div>
+      </form>
     </dialog>
 
     <dialog id="todo-dialog">
-        <form id="todo-form">
-            <h3>Add Task</h3>
-            <input type="text" id="todo-title" placeholder="Title" required>
-            <textarea id="todo-desc" placeholder="Description"></textarea>
-            <input type="date" id="todo-date" required>
-            <select id="todo-priority">
-                <option value="Low">Low</option>
-                <option value="Medium" selected>Medium</option>
-                <option value="High">High</option>
-            </select>
-            <div class="form-actions">
-                <button type="button" id="close-todo-dialog">Cancel</button>
-                <button type="submit">Add</button>
-            </div>
-        </form>
+      <form id="todo-form">
+        <h3>Add Task</h3>
+        <input type="text" id="todo-title" placeholder="Title" required />
+        <textarea id="todo-desc" placeholder="Description"></textarea>
+        <input type="date" id="todo-date" required />
+        <select id="todo-priority">
+          <option value="Low">Low</option>
+          <option value="Medium" selected>Medium</option>
+          <option value="High">High</option>
+        </select>
+        <div class="form-actions">
+          <button type="button" id="close-todo-dialog">Cancel</button>
+          <button type="submit">Add</button>
+        </div>
+      </form>
     </dialog>
-</body>
+  </body>
 </html>
